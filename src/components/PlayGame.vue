@@ -41,31 +41,37 @@ export default {
       playGame: true,
       skip: false,
       gameover: false,
-      counter: 30,
+      counter: 20,
       taboos: [],
       randomPlayer: 0,
-      randomTabooCard: 0
+      randomTabooCard: 0,
+      timerId: null,
+      timerIds: []
     }
   },
   methods: {
     showTaboo() {
+      this.timerId = null
+      clearInterval(this.timerId)
       this.gameover = false
       this.playGame = false
       this.skip = true
       this.randomPlayer = Math.floor(Math.random() * 4)
       this.randomTabooCard = Math.floor(Math.random() * this.taboos.length)
-      const timerId = setInterval(() => {
+      this.timerId = setInterval(() => {
+        this.timerIds.push(this.timerId)
         if (this.counter === 0) {
-          clearInterval(timerId)
+          clearInterval(this.timerId)
           this.gameover = true
           this.show = false
           this.skip = false
-        }
+          }
         this.counter--
         }, 1000)
-      this.counter = 10
       this.show = true
-      },
+      this.counter = 20
+      this.timerIds.map(id => clearInterval(id))
+    },
     skipCard() {
       this.randomTabooCard = Math.floor(Math.random() * this.taboos.length)     
     }

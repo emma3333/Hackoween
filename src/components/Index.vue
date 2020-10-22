@@ -3,13 +3,13 @@
     <h2>Hackoween Taboo</h2>
     <p v-if="playersOne.length > 0">Team names: <span v-for="(player, index) in splitPlayers" :key="index">{{player + '    '}}</span></p>
     <form v-if="playersOne.length < 4" @submit.prevent="enterGame()">
-      <h2>Team Names (4 players)</h2>
+      <h3>Team Names (4 players)</h3>
       <div v-show="true" v-for="(player, index) in playersOne" :key="index">
         <label for="playerone">Player {{ index+1 }}</label>
         <input type="text" name="playerone" v-model="playersOne[index]" @keydown.tab.prevent="addPlayer">
       </div>
       <div class="field">
-        <label for="add-player">Enter player name</label>
+        <label for="add-player">Enter player name (press tab to enter):</label>
         <input type="text" name="add-player" @keydown.tab.prevent="addPlayerOne" v-model="player">
         <p v-if="feedback">{{ feedback }}</p>
       </div>
@@ -62,7 +62,6 @@ export default {
     splitPlayers() {
       let singlePlayer = [...this.playersOne]
       singlePlayer.map(player => player.split('').join(''))
-      console.log(singlePlayer)
       return singlePlayer
     }
   }
@@ -71,7 +70,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h2 {
+h2, h3 {
   margin: 0;
 }
 span {
