@@ -121,8 +121,8 @@ export default {
 <style scoped lang="scss">
 .base-timer {
   position: relative;
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
 
   &__svg {
     transform: scaleX(-1);
@@ -162,8 +162,8 @@ export default {
 
   &__label {
     position: absolute;
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     top: 0;
     display: flex;
     align-items: center;

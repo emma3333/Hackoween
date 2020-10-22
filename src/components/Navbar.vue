@@ -2,15 +2,12 @@
   <div class="navbar">
     <div class="links">
       <router-link :to="{ name: 'Index' }">
-        <!-- <i class="material-icons play">bug_report</i> -->
         <span>Hackoween</span>
       </router-link>
       <router-link :to="{ name: 'HowToPlay' }">
-        <!-- <i class="material-icons play">contact_support</i> -->
-        <span>hOw To PlAy</span>
+        <span>How to play</span>
       </router-link>
-      <router-link :to="{ name: 'PlayGame' }">
-        <!-- <i class="material-icons play">play_circle_fill</i>  -->
+      <router-link :to="{ name: 'PlayGame' }">   
         <span>Play Game</span>
       </router-link>
     </div>
