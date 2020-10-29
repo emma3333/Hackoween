@@ -3,7 +3,7 @@
     <h2>Hackoween Taboo</h2>
     <p v-if="playersOne.length > 0">Team names: <span v-for="(player, index) in splitPlayers" :key="index">{{player + '    '}}</span></p>
     <form v-if="playersOne.length < 4" @submit.prevent="enterGame()">
-      <h3>Team Names (4 players)</h3>
+      <h3>Team names (4 players)</h3>
       <div v-show="true" v-for="(player, index) in playersOne" :key="index">
         <label for="playerone">Player {{ index+1 }}</label>
         <input type="text" name="playerone" v-model="playersOne[index]" @keydown.enter.prevent="addPlayer">

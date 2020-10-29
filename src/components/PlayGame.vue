@@ -2,7 +2,7 @@
   <div class="container">
     <h4 v-show="gameover">Time's up!</h4>
     <div v-show="show" class="game">
-      <p v-if="players">Player: <span>{{ players[randomPlayer] }}</span></p>
+      <p v-if="players">Clue giver: <span>{{ players[randomPlayer] }}</span></p>
         <div>
           <h3>Keyword: {{ taboos[randomTabooCard].keyword }}</h3>
           <p>Taboo words: {{ taboos[randomTabooCard].taboowords.join(', ') }}</p>
