@@ -6,15 +6,14 @@
       <h3>Team Names (4 players)</h3>
       <div v-show="true" v-for="(player, index) in playersOne" :key="index">
         <label for="playerone">Player {{ index+1 }}</label>
-        <input type="text" name="playerone" v-model="playersOne[index]" @keydown.tab.prevent="addPlayer">
+        <input type="text" name="playerone" v-model="playersOne[index]" @keydown.enter.prevent="addPlayer">
       </div>
       <div class="field">
-        <label for="add-player">Enter player name (press tab to enter):</label>
-        <input type="text" name="add-player" @keydown.tab.prevent="addPlayerOne" v-model="player">
+        <label for="add-player">Enter player names (press enter):</label>
+        <input type="text" name="add-player" @keydown.enter.prevent="addPlayerOne" v-model="player">
         <p v-if="feedback">{{ feedback }}</p>
       </div>
     </form>
-
     <PlayGame :players="playersOne" v-if="playersOne.length === 4"></PlayGame>
   </div>
 </template>
